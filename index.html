@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hill Function</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Hill Function">
+  <meta name="author" content="JediZ">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Hill Function</h1>
+    <h2>Data Product Project</h2>
+    <p>JediZ<br/>Coursera</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Enzyme Kinetics</p>
+
+<ul>
+<li>Michaelis-Menten equation<br></li>
+</ul></li>
+<li><p>Cooperativity<br>
+In biochemistry, the binding of a ligand to a macromolecule is often enhanced if there are already other ligands present on the same macromolecule (this is known as cooperative binding). The Hill coefficient provides a way to quantify this effect.  </p>
+
+<ul>
+<li>potassium channel<br></li>
+<li>hemoglobin<br></li>
+</ul></li>
+<li><p>Hill Coefficient  </p>
+
+<p>Hill coefficient, describing cooperativity (or possibly other biochemical properties, depending on the context in which the Hill equation is being used)</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Hill Function</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>Definition:</h3>
+
+<p><img src="http://latex.codecogs.com/gif.latex?Hill%28S%3Bh%29%3D%20%5Cfrac%7BV_m%5Ccdot%20S%5Eh%7D%7BK_m%5Eh&amp;plus;S%5Eh%7D" alt="equation">  </p>
+
+<p>where S is substrate concentration,<br>
+h is hill number,<br>
+Km and Vm has same meaning as in Michaelis-Menten Equation.  </p>
+
+<h3>R code:</h3>
+
+<pre><code class="r">hill &lt;- function(x, Km, Vm, h=1) {
+    xh &lt;- x^h
+    Kmh &lt;- Km^h
+    Vm*xh / (Kmh+xh)
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Hill Function in Action</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code>h = 1,2,4,10;  
+Km = 1; Vm = 10;  
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Resources and References</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><a href="http://en.wikipedia.org/wiki/Enzyme_kinetics">Enzyme Kinetics</a><br></li>
+<li><a href="http://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics">Michaelis-Menten Equation</a><br></li>
+<li><a href="http://en.wikipedia.org/wiki/Hill_equation_%28biochemistry%29">Hill Equation</a><br></li>
+<li><a href="http://en.wikipedia.org/wiki/Cooperative_binding">Cooperative Binding</a><br></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Hill Function'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Hill Function in Action'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Resources and References'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
